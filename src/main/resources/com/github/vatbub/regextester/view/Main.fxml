@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.vatbub.regextester.view.Main">
+   <children>
+      <GridPane layoutX="14.0" layoutY="14.0" vgap="5.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" vgrow="NEVER" />
+          <RowConstraints minHeight="10.0" vgrow="ALWAYS" />
+          <RowConstraints minHeight="10.0" vgrow="NEVER" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="result" alignment="CENTER" maxWidth="1.7976931348623157E308" style="-fx-border-color: #CCCCCC; -fx-border-radius: 3;" text="Enter a regular expression!" GridPane.rowIndex="2" />
+            <TextField fx:id="regex" promptText="regular expression" />
+            <TextArea fx:id="sample" prefHeight="200.0" prefWidth="200.0" promptText="sample text" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
