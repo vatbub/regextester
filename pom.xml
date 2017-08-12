@@ -59,7 +59,7 @@
         <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
         <gitRepoName>regextester</gitRepoName>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mainClass>com.github.vatbub.tictactoe.view.Main</mainClass>
+        <mainClass>com.github.vatbub.regextester.view.Main</mainClass>
     </properties>
 
     <build>
