@@ -35,8 +35,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Main extends Application {
+    @SuppressWarnings("unused")
     @FXML
     private ResourceBundle resources;
+    @SuppressWarnings("unused")
     @FXML
     private URL location;
     @FXML
@@ -77,17 +79,17 @@ public class Main extends Application {
 
     private void checkRegex(String regex, String sampleText) {
         String newLabelText = "";
-        String newLabelStyle = "-fx-border-radius: 3;";
+        StringBuilder newLabelStyle = new StringBuilder("-fx-border-radius: 3;");
         try {
             if (regex.equals("")) {
                 newLabelText = "Enter a regular expression!";
-                newLabelStyle = newLabelStyle + "-fx-border-color: #CCCCCC;";
+                newLabelStyle.append("-fx-border-color: #CCCCCC;");
             } else if (sampleText.equals("")) {
                 newLabelText = "Please enter a sample text!";
-                newLabelStyle = newLabelStyle + "-fx-border-color: #CCCCCC;";
+                newLabelStyle.append("-fx-border-color: #CCCCCC;");
             } else if (sampleText.matches(regex)) {
                 newLabelText = "Match";
-                newLabelStyle = newLabelStyle + "-fx-border-color: #00FF00;";
+                newLabelStyle.append("-fx-border-color: #00FF00;");
             } else {
                 // Check if a substring matches the regex
                 boolean substringFound = false;
@@ -96,24 +98,24 @@ public class Main extends Application {
                         if (sampleText.substring(startIndex, endIndex).matches(regex)) {
                             substringFound = true;
                             newLabelText = "Matching substring: " + sampleText.substring(startIndex, endIndex);
-                            newLabelStyle = newLabelStyle + "-fx-border-color: #00FF00;";
+                            newLabelStyle.append("-fx-border-color: #00FF00;");
                         }
                     }
                 }
 
                 if (!substringFound) {
                     newLabelText = "No match";
-                    newLabelStyle = newLabelStyle + "-fx-border-color: FF0000;";
+                    newLabelStyle.append("-fx-border-color: FF0000;");
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
             newLabelText = "Exception: " + e.getClass().getSimpleName();
-            newLabelStyle = newLabelStyle + "-fx-border-color: #FF0000;";
+            newLabelStyle.append("-fx-border-color: #FF0000;");
         }
 
         result.setText(newLabelText);
-        result.setStyle(newLabelStyle);
+        result.setStyle(newLabelStyle.toString());
     }
 }
 
